@@ -5,13 +5,14 @@
 
 
 import math as m
-from radToDms import dms
+from module.radToDms import dms
+from module.ellipsoid import WGS84
 
 
 # Параметры эллипсоида WGS84
-a = 6378137.0000
-b = 6356752.3142
-e = 0.0818191908
+a = WGS84.a
+b = WGS84.b
+e = WGS84.e
 
 print(__doc__)
 Name = str(input('Имя точки: '))
