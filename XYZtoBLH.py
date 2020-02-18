@@ -14,18 +14,29 @@ a = WGS84.a
 b = WGS84.b
 e = WGS84.e
 
+
+# Точка для тестового решения
+point_0 = {
+    'Name': 'MEJN',
+    'N': 6392640.0219,
+    'X': 3182728.7138,
+    'Y': 1752004.8071,
+    'Z': 5224881.3819
+    }
+
+
 print(__doc__)
-Name = str(input('Имя точки: '))
-N = float(input('Радиус кривизны 1-го вертикала N: '))
-X = float(input('X: '))
-Y = float(input('Y: '))
-Z = float(input('Z: '))
 
 
-def results(N, X, Y, Z):
+def results(Name, N, X, Y, Z):
 
     print('\nFunction in work...\n')
-
+    """Name = str(input('Имя точки: '))
+    N = float(input('Радиус кривизны 1-го вертикала N: '))
+    X = float(input('X: '))
+    Y = float(input('Y: '))
+    Z = float(input('Z: '))
+    """
     L = m.atan(Y/X)
     D = m.sqrt(X**2+Y**2)
 
@@ -89,6 +100,8 @@ def results(N, X, Y, Z):
 
                 B = b
                 H = D*m.cos(B) + Z*m.sin(B) - a*m.sqrt(1-(e**2)*(m.sin(B)**2))
+                
+                print('\n')
 
                 break
 
@@ -96,9 +109,14 @@ def results(N, X, Y, Z):
     
     L = m.atan(Y/X)
 
-    return 'B = '+str(dms(B))+'\t'+'L = '+str(dms(L))+'\t'+'H = '+str(round(H,4))
+    return {
+        'Name': Name,
+        'B': dms(B),
+        'L': dms(L),
+        'H': round(H, 4)
+        }
 
-print(
-    '\n\nPoint `'+Name+'`:\t',
-    results(N, X, Y, Z)
+#print('\n\n', results(Name, N, X, Y, Z))
+print('Result:',
+    results(point_0['Name'], point_0['N'], point_0['X'], point_0['Y'], point_0['Z'])
     )
