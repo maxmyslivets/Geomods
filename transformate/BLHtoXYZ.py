@@ -1,7 +1,5 @@
-"""
-Преобразование эллипсоидальных (геодезических) координат
-в трехмерные прямоугольные координаты
-"""
+"""Преобразование эллипсоидальных (геодезических) координат
+в трехмерные прямоугольные координаты"""
 
 from math import cos, sin, sqrt, radians
 from module.ellipsoid import WGS84
@@ -20,12 +18,10 @@ point_0 = {
     }
 
 
-print(__doc__)
-
-
-def results(Name, B, L, H):
+def BLHtoXYZ(Name, B, L, H):
 
     print('\nFunction in work...\n')
+    
     """Name = str(input('Имя точки: '))
     B = input('Геодезическая широта B: ').split(' ')
     L = input('Геодезическая долгота L: ').split(' ')
@@ -59,6 +55,4 @@ def results(Name, B, L, H):
         'Z': Z
         }
 
-print('Result:',
-    results(point_0['Name'], point_0['B'], point_0['L'], point_0['H'])
-    )
+#print('Result:', BLHtoXYZ(point_0['Name'], point_0['B'], point_0['L'], point_0['H']))

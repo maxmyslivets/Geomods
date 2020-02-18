@@ -1,7 +1,5 @@
-"""
-Преобразование трехмерных прямоугольных координат в
-трехмерные эллипсоидальные (геодезические) координаты
-"""
+"""Преобразование трехмерных прямоугольных координат в
+трехмерные эллипсоидальные (геодезические) координаты"""
 
 
 import math as m
@@ -25,18 +23,16 @@ point_0 = {
     }
 
 
-print(__doc__)
-
-
-def results(Name, N, X, Y, Z):
+def XYZtoBLH(Name, N, X, Y, Z):
 
     print('\nFunction in work...\n')
+
     """Name = str(input('Имя точки: '))
     N = float(input('Радиус кривизны 1-го вертикала N: '))
     X = float(input('X: '))
     Y = float(input('Y: '))
-    Z = float(input('Z: '))
-    """
+    Z = float(input('Z: '))"""
+    
     L = m.atan(Y/X)
     D = m.sqrt(X**2+Y**2)
 
@@ -117,6 +113,4 @@ def results(Name, N, X, Y, Z):
         }
 
 #print('\n\n', results(Name, N, X, Y, Z))
-print('Result:',
-    results(point_0['Name'], point_0['N'], point_0['X'], point_0['Y'], point_0['Z'])
-    )
+#print('Result:', XYZtoBLH(point_0['Name'], point_0['N'], point_0['X'], point_0['Y'], point_0['Z']))
