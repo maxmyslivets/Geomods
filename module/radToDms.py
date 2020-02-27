@@ -36,3 +36,5 @@ def dms(r):
 
 
     return dms_str
+
+#print(dms(float(input())))
