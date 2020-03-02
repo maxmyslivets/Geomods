@@ -3,8 +3,8 @@
 
 
 import math as m
-from module.radToDms import dms
-from module.ellipsoid import WGS84
+from lib.transdeg import rad_to_str_dms
+from lib.ellipsoid import WGS84
 
 
 # Параметры эллипсоида WGS84
@@ -44,7 +44,7 @@ def XYZtoBLH(Name, N, X, Y, Z):
         L = 0
         H = Z*m.sin(B) - a*m.sqrt(1 - (e**2)*(m.sin(B)**2))
 
-        print('\tD = 0:\tB =', dms(B), '\tL =', dms(L), '\tH =', H)
+        print('\tD = 0:\tB =', rad_to_str_dms(B), '\tL =', rad_to_str_dms(L), '\tH =', H)
     
     else:
 
@@ -56,7 +56,7 @@ def XYZtoBLH(Name, N, X, Y, Z):
         elif Y==0 and X>0: L = 0
         elif Y==0 and X<0: L = m.pi
 
-        print('\tD != 0\n\tL =', dms(L))
+        print('\tD != 0\n\tL =', rad_to_str_dms(L))
     
     print('\n\tAnalising variable Z:')
 
@@ -65,7 +65,7 @@ def XYZtoBLH(Name, N, X, Y, Z):
         B = 0
         H = D - a
 
-        print('\tZ = 0:\tB =', dms(B), '\tL =', dms(L), '\tH =', H)
+        print('\tZ = 0:\tB =', rad_to_str_dms(B), '\tL =', rad_to_str_dms(L), '\tH =', H)
 
     else:
 
@@ -107,8 +107,8 @@ def XYZtoBLH(Name, N, X, Y, Z):
 
     return {
         'Name': Name,
-        'B': dms(B),
-        'L': dms(L),
+        'B': rad_to_str_dms(B),
+        'L': rad_to_str_dms(L),
         'H': round(H, 4)
         }
 

@@ -2,7 +2,7 @@
 в трехмерные прямоугольные координаты"""
 
 from math import cos, sin, sqrt, radians
-from module.ellipsoid import WGS84
+from lib.ellipsoid import WGS84
 
 
 # Параметры эллипсоида WGS84
