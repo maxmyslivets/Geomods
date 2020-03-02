@@ -39,7 +39,7 @@ def transformXYZ(Name, X, Y, Z, dX, dY, dZ, wX, wY, wZ, m):
 
     print('\nFunction in work...\n')
 
-    """Name = str(input('Имя точки: '))
+    Name = str(input('Имя точки: '))
     X = float(input('X: '))
     Y = float(input('Y: '))
     Z = float(input('Z: '))
@@ -49,7 +49,7 @@ def transformXYZ(Name, X, Y, Z, dX, dY, dZ, wX, wY, wZ, m):
     wX = float(input('wX: '))
     wX = float(input('wY: '))
     wX = float(input('wZ: '))
-    m = float(input('m: '))"""
+    m = float(input('m: '))
 
     k = array([[X], [Y], [Z]])
     print('\nИсходные координаты:\n', k)
@@ -69,7 +69,7 @@ def transformXYZ(Name, X, Y, Z, dX, dY, dZ, wX, wY, wZ, m):
     return k2
 
 
-print('\nResult:', transformXYZ(
+"""print('\nResult:', transformXYZ(
     point_0['Name'],
     point_0['X'],
     point_0['Y'],
@@ -81,4 +81,4 @@ print('\nResult:', transformXYZ(
     point_0['wY'],
     point_0['wZ'],
     point_0['m']
-    ))
+    ))"""
