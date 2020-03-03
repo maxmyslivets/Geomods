@@ -8,15 +8,15 @@ def BLtoXY_gaus_kruger(B, L):
     """Вычисление прямоугольных координат Гаусса-Крюгера по геодезическим"""
     
     print('Вычисляем радиус кривизны первого вертикала:')
-    N = 6399698.902-(21562.267-(108.973-0.612*cos(dms_to_rad(B))**2)*cos(dms_to_rad(B))**2)*cos(dms_to_rad(B))**2
+    N = round((6399698.902-(21562.267-(108.973-0.612*cos(dms_to_rad(B))**2)*cos(dms_to_rad(B))**2)*cos(dms_to_rad(B))**2), 4)
     print('N =', N)
 
     print('Вычисляем коэффициенты a0, a3, a4, a5, a6:')
-    a0 = 32140.404-(135.3302-(0.7092-0.0040*cos(dms_to_rad(B))**2)*cos(dms_to_rad(B))**2)*cos(dms_to_rad(B))**2
-    a3 = (0.3333333+0.001123*cos(dms_to_rad(B))**2)*(cos(dms_to_rad(B))**2)-0.1666667
-    a4 = (0.25+0.00252*cos(dms_to_rad(B))**2)*(cos(dms_to_rad(B))**2)-0.04166
-    a5 = 0.0083-(0.1667-(0.1968+0.0040*cos(dms_to_rad(B))**2)*cos(dms_to_rad(B))**2)*cos(dms_to_rad(B))**2
-    a6 = (0.166*(cos(dms_to_rad(B))**2)-0.084)*cos(dms_to_rad(B))**2
+    a0 = round((32140.404-(135.3302-(0.7092-0.0040*cos(dms_to_rad(B))**2)*cos(dms_to_rad(B))**2)*cos(dms_to_rad(B))**2), 4)
+    a3 = round(((0.3333333+0.001123*cos(dms_to_rad(B))**2)*(cos(dms_to_rad(B))**2)-0.1666667), 4)
+    a4 = round(((0.25+0.00252*cos(dms_to_rad(B))**2)*(cos(dms_to_rad(B))**2)-0.04166), 4)
+    a5 = round((0.0083-(0.1667-(0.1968+0.0040*cos(dms_to_rad(B))**2)*cos(dms_to_rad(B))**2)*cos(dms_to_rad(B))**2), 4)
+    a6 = round(((0.166*(cos(dms_to_rad(B))**2)-0.084)*cos(dms_to_rad(B))**2), 4)
 
     print('a0 =', a0, '\na3 =', a3, '\na4 =', a4, '\na5 =', a5, '\na6 =', a6)
 
@@ -34,7 +34,7 @@ def BLtoXY_gaus_kruger(B, L):
     L0 = str_dms_to_dms(input("Введите долготу осевого меридиана, например '21 00 00.00000':\n"))
 
     print('Вычисляем l:')
-    l = (dms_to_s(L)-dms_to_s(L0)) / 206265
+    l = round(((dms_to_s(L)-dms_to_s(L0)) / 206265), 9)
     print('l =', l)
 
     print('Вычисляем прямоугольные координаты Гаусса-Крюгера:')
