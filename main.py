@@ -1,10 +1,11 @@
+from lib import transdeg
+from lib.transdeg import str_dms_to_dms, rad_to_str_dms, deg_to_str_dms, str_dms_to_deg, str_dms_to_rad, dms_to_str_dms_chr
 from lib import BLHtoXYZ
 from lib import XYZtoBLH
 from lib import transformXYZ
 from lib import transformDeltaXYZ
 from lib import BLtoXY_gaus_kruger
-from lib import transdeg
-from lib.transdeg import str_dms_to_dms, rad_to_str_dms, deg_to_str_dms, str_dms_to_deg, str_dms_to_rad, dms_to_str_dms_chr
+from lib import dh_to_Hy
 
 
 print('\n\tGEOMODS (by Max Myslivets)\nВыберите операцию:')
@@ -18,6 +19,7 @@ def menu():
     print('4.', transformXYZ.__doc__)
     print('5.', transformDeltaXYZ.__doc__)
     print('6.', BLtoXY_gaus_kruger.__doc__)
+    print('7.', dh_to_Hy.__doc__)
 
     print('0. Выход\n\n')
 
@@ -55,6 +57,8 @@ while menuEnter != '0':
         
         elif menuEnter == '0':
             menuEnter = None
+            menu()
+            continue
 
         else: print('Такого пункта нету в меню')
     
@@ -84,6 +88,16 @@ while menuEnter != '0':
         B = str_dms_to_dms(input('Геодезическая широта B: '))
         L = str_dms_to_dms(input('Геодезическая долгота L: '))
         BLtoXY_gaus_kruger.BLtoXY_gaus_kruger(B, L)
+    
+    elif menuEnter == '7':
+        B1 = str_dms_to_rad(input('Геодезическая широта B первой точки: '))
+        g_y1 = float(input('Аномалия в свободном воздухе (мГал) в первой точке: '))
+        B2 = str_dms_to_rad(input('Геодезическая широта B второй точки: '))
+        g_y2 = float(input('Аномалия в свободном воздухе (мГал) во второй точке: '))
+        dh = float(input('Превышение, м: '))
+        H1 = float(input('Отметка первой точки, м: '))
+
+        print(dh_to_Hy.dh_to_Hy(B1, g_y1, B2, g_y2, dh, H1))
     
     else: print('Такого пункта нету в меню')
 

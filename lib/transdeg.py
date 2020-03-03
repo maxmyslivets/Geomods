@@ -101,25 +101,25 @@ def dms_to_str_dms(dms):
 
 
 def rad_to_str_dms(rad):
-    """rad_to_str_dms: радианы >> 'градусы минуты секунды'"""
+    """радианы >> 'градусы минуты секунды'"""
 
     return dms_to_str_dms(rad_to_dms(rad))
 
 
 def deg_to_str_dms(deg):
-    """deg_to_str_dms: градусы >> 'градусы минуты секунды'"""
+    """градусы >> 'градусы минуты секунды'"""
 
     return dms_to_str_dms(deg_to_dms(deg))
 
 
 def str_dms_to_deg(str_dms):
-    """str_dms_to_deg: 'градусы минуты секунды' >> градусы"""
+    """'градусы минуты секунды' >> градусы"""
 
     return dms_to_deg(str_dms_to_dms(str_dms))
 
 
 def str_dms_to_rad(str_dms):
-    """str_dms_to_rad: 'градусы минуты секунды' >> радианы"""
+    """'градусы минуты секунды' >> радианы"""
 
     return radians(str_dms_to_deg(str_dms))
 
