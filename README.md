@@ -1,6 +1,6 @@
 # Geomods
 Geodesic modules
-[![Run on Repl.it](https://repl.it/badge/github/maxmyslivets/Geomods)](https://repl.it/github/maxmyslivets/Geomods)
+[![Run on Repl.it](https://repl.it/badge/github/maxmyslivets/Geomods)](https://Geomods.maxmyslivets.repl.run)
 
 * Преобразование угловых мер
 * Преобразование эллипсоидальных (геодезических) координат в трехмерные прямоугольные координаты
