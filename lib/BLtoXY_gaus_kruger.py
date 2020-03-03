@@ -1,6 +1,6 @@
 """Вычисление прямоугольных координат Гаусса-Крюгера по геодезическим"""
 
-from lib.transdeg import dms_to_rad, rad_to_str_dms, str_dms_to_dms, deg_to_rad, rad_to_dms
+from lib.transdeg import dms_to_rad, rad_to_str_dms, str_dms_to_dms, deg_to_rad, rad_to_dms, dms_to_deg
 from math import cos, sin
 
 
@@ -23,10 +23,10 @@ def BLtoXY_gaus_kruger(B, L):
     def dms_to_s(dms):
 
         if dms[0] >= 0:
-            s = dms[0]*3600 + dms[1]*60 + dms[2]
-        if dms[0] < 0:
+            s = dms_to_deg(dms)*3600
+        elif dms[0] < 0:
             dms[0] = -dms[0]
-            s = dms[0]*3600 + dms[1]*60 + dms[2]
+            s = dms_to_deg(dms)*3600
             s = -s
         
         return s
